@@ -1,0 +1,27 @@
+# Local/private Git config
+.gitconfig.local
+git/.gitconfig.local
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+.ssh/
+
+# Token/config files that commonly contain secrets
+.npmrc
+.netrc
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local backups created by install.sh
+*.backup.*
