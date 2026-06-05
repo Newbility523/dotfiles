@@ -1,0 +1,12 @@
+set showmode
+set scrolloff=5
+set incsearch
+set relativenumber
+set number 
+set clipboard+=unnamed
+
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^ 
+

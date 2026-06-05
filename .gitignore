@@ -17,6 +17,10 @@ id_ed25519
 .npmrc
 .netrc
 
+# Neovim runtime/cache copied from local config
+nvim/.config/nvim/.git/
+nvim/.config/nvim/lazy/
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
