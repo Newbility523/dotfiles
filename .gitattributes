@@ -1,5 +1,6 @@
 * text=auto
 
+.gitattributes text eol=lf
 *.sh text eol=lf
 *.bashrc text eol=lf
 *.bash_profile text eol=lf
@@ -8,4 +9,5 @@
 *.gitconfig text eol=lf
 *.lua text eol=lf
 *.md text eol=lf
-
+*.ahk text eol=lf
+*.ps1 text eol=lf

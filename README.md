@@ -64,7 +64,19 @@ Supported profiles:
 ./install.sh wsl
 ```
 
-If a target file already exists, the installer moves it to a timestamped backup before creating the symlink.
+Windows-specific configuration:
+
+```powershell
+.\install-windows.ps1
+```
+
+This creates a Startup shortcut for:
+
+```text
+autohotkey/mac-style-alt-copy-paste.ahk
+```
+
+If a target file already exists, the Unix installer moves it to a timestamped backup before creating the symlink.
 
 ## Local Secrets
 
