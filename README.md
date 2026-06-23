@@ -76,6 +76,16 @@ This creates a Startup shortcut for:
 autohotkey/mac-style-alt-copy-paste.ahk
 ```
 
+Optional system-wide keyboard remap:
+
+```powershell
+# Run PowerShell as Administrator.
+.\windows\register-left-alt-win-swap.ps1
+.\windows\unregister-left-alt-win-swap.ps1
+```
+
+The register script swaps Left Alt and Left Windows through the Windows `Scancode Map` registry value. Restart Windows after registering or unregistering.
+
 If a target file already exists, the Unix installer moves it to a timestamped backup before creating the symlink.
 
 ## Local Secrets
