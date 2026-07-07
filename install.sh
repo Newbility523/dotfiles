@@ -60,6 +60,7 @@ link_path "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 link_path "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 link_path "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 link_path "$DOTFILES_DIR/nvim/.config/nvim" "$HOME/.config/nvim"
+link_path "$DOTFILES_DIR/jetbrains/.ideavimrc" "$HOME/.ideavimrc"
 
 case "$PROFILE" in
   mac)

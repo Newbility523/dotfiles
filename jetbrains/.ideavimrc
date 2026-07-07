@@ -1,0 +1,117 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Show the current mode.
+set showmode
+
+" Use relative line numbers, while keeping the current line absolute.
+set relativenumber
+set number
+
+" Use the system clipboard by default.
+set clipboard+=unnamed
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Use Space as the leader key. Keep this before EasyMotion is enabled.
+let mapleader=" "
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Surround plugin
+Plug 'tpope/vim-surround'
+" Indent-based motions
+Plug 'jeetsukumaran/vim-indentwise'
+" EasyMotion requires the IdeaVim-EasyMotion and AceJump IDE plugins.
+let g:EasyMotion_do_mapping = 0
+set easymotion
+
+" --- Vim-style editing mappings ---
+
+" Match VS Code/Neovim line navigation.
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" Insert a blank line without staying in insert mode.
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> O<Esc>
+
+" --- EasyMotion mappings ---
+
+nmap <Space><Space>s <Plug>(easymotion-jumptoanywhere)
+nmap <Space><Space>w <Plug>(easymotion-bd-w)
+nmap <Space><Space>b <Plug>(easymotion-b)
+nmap <Space><Space>e <Plug>(easymotion-bd-e)
+nmap <Space><Space>f <Plug>(easymotion-bd-f)
+nmap <Space><Space>j <Plug>(easymotion-j)
+nmap <Space><Space>k <Plug>(easymotion-k)
+nmap <Space><Space>h <Plug>(easymotion-linebackward)
+nmap <Space><Space>l <Plug>(easymotion-lineforward)
+
+" --- Code actions ---
+
+nmap <Space>ff <Action>(ReformatCode)
+vmap <Space>ff <Action>(ReformatCode)
+nmap <Space>oi <Action>(OptimizeImports)
+nmap <Space>ca <Action>(ShowIntentionActions)
+nmap <Space>rn <Action>(RenameElement)
+
+" --- Yank actions ---
+
+nmap <Space>yf <Action>(CopyFileName)
+nmap <Space>yp <Action>(CopyAbsolutePath)
+
+" --- Navigation actions ---
+
+nmap <Space>gd <Action>(GotoDeclaration)
+nmap <Space>gi <Action>(GotoImplementation)
+nmap <Space>gr <Action>(FindUsages)
+nmap <Space>gt <Action>(GotoTest)
+
+nmap K <Action>(ShowHoverInfo)
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(FindUsages)
+
+" --- Window actions ---
+
+nmap <Space>wv <Action>(MoveTabRight)
+nmap <Space>ws <Action>(MoveTabDown)
+nmap <Space>wm <Action>(MoveEditorToOppositeTabGroup)
+nmap <Space>wc <Action>(Unsplit)
+nmap <Space>wo <Action>(UnsplitAll)
+nmap <Space>wh <C-w>h
+nmap <Space>wj <C-w>j
+nmap <Space>wk <C-w>k
+nmap <Space>wl <C-w>l
+
+" --- Tab actions ---
+
+nmap <Space>tn <Action>(NextTab)
+nmap <Space>tp <Action>(PreviousTab)
+nmap <Space>tc <Action>(CloseContent)
+nmap <Space>to <Action>(CloseAllEditorsButActive)
+
+" --- Recent navigation ---
+
+nmap <Space>fr <Action>(RecentFiles)
+nmap <Space>fs <Action>(Switcher)
+nmap <Space><Tab> <Action>(Switcher)
