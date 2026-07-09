@@ -36,8 +36,14 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 " Surround plugin
 Plug 'tpope/vim-surround'
+" Subword motions for camelCase, snake_case, and kebab-case identifiers
+let g:camelcasemotion_key = ','
+Plug 'bkad/CamelCaseMotion'
 " Indent-based motions
 Plug 'jeetsukumaran/vim-indentwise'
+" Multiple cursors
+let g:multi_cursor_use_default_mapping = 0
+set multiple-cursors
 " EasyMotion requires the IdeaVim-EasyMotion and AceJump IDE plugins.
 let g:EasyMotion_do_mapping = 0
 set easymotion
@@ -54,6 +60,11 @@ vnoremap L $
 nnoremap <CR> o<Esc>
 nnoremap <S-CR> O<Esc>
 
+" Yank the current word without trailing whitespace.
+nnoremap yw yiw
+nnoremap yW yiW
+nnoremap <Space>y_ viWholy
+
 " --- EasyMotion mappings ---
 
 nmap <Space><Space>s <Plug>(easymotion-jumptoanywhere)
@@ -65,6 +76,36 @@ nmap <Space><Space>j <Plug>(easymotion-j)
 nmap <Space><Space>k <Plug>(easymotion-k)
 nmap <Space><Space>h <Plug>(easymotion-linebackward)
 nmap <Space><Space>l <Plug>(easymotion-lineforward)
+
+" --- Surround mappings ---
+
+nmap <Space>sw ysiw
+nmap <Space>ss yss
+nmap <Space>sd ds
+nmap <Space>sc cs
+xmap <Space>s S
+
+" --- Multiple cursor mappings ---
+
+nmap <Space>mn <Plug>NextWholeOccurrence
+xmap <Space>mn <Plug>NextWholeOccurrence
+nmap <Space>ma <Plug>AllWholeOccurrences
+xmap <Space>ma <Plug>AllWholeOccurrences
+nmap <Space>mN <Plug>NextOccurrence
+xmap <Space>mN <Plug>NextOccurrence
+nmap <Space>mA <Plug>AllOccurrences
+xmap <Space>mA <Plug>AllOccurrences
+xmap <Space>mx <Plug>SkipOccurrence
+xmap <Space>mp <Plug>RemoveOccurrence
+
+" --- Indentwise mappings ---
+
+nmap <M-k> [+
+nmap <M-j> ]-
+nmap <M-u> [-
+nmap <M-d> ]+
+nmap <M-h> [%
+nmap <M-l> ]%
 
 " --- Code actions ---
 
