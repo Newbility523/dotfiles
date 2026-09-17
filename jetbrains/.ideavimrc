@@ -119,6 +119,7 @@ nmap <Space>rn <Action>(RenameElement)
 
 nmap <Space>yf <Action>(CopyFileName)
 nmap <Space>yp <Action>(CopyAbsolutePath)
+nmap <Space>kw <Action>(RevealIn)
 
 " --- Navigation actions ---
 
